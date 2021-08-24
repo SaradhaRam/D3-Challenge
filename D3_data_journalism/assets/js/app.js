@@ -46,7 +46,7 @@ function renderXAxes(newXScale, xAxis) {
 }
 // Function used for updating y-scale var upon click on axis label.
 function yScale(data, chosenYAxis, chartHeight) {
-    // Create scales.
+    // Create scales 
     var yLinearScale = d3.scaleLinear()
         .domain([d3.min(data, d => d[chosenYAxis]) * .8,
             d3.max(data, d => d[chosenYAxis]) * 1.2
@@ -272,7 +272,7 @@ d3.csv("assets/data/data.csv").then(function(healthData, err) {
             }
             // Update circles with new x values.
             circle = renderCircles(circlesGroup, xLinearScale, yLinearScale, chosenXAxis, chosenYAxis);
-            // Update tool tips with new info.
+            // Update tool tips with new information.
             circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circle, circleText);
             // Update circles text with new values.
             circleText = renderText(circleText, xLinearScale, yLinearScale, chosenXAxis, chosenYAxis);
